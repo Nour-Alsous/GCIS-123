@@ -8,7 +8,7 @@ using the turtle module, and further prompts the user to choose whichever color 
 for each shape ,these three shapes are specificily programmed with different coordinates 
 
 Repository Links:
-Syed : 
+Syed : https://github.com/LagSpikeee/GCIS-123/blob/main/group8-activity1.py
 Meera :
 Caesar :
 """
