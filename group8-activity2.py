@@ -8,7 +8,7 @@ Description: This program has been designed to help the user in currency convers
              to convert any of the currencies. 
 
 Repository Links:
-Syed : 
+Syed : https://github.com/LagSpikeee/GCIS-123/blob/main/group8-activity2.py
 Meera : 
 Caesar : 
 """
