@@ -6,7 +6,7 @@ contribution of Meera: load_data function & docstring
 Description: 
 
 Repository Links:
-Syed : 
+Syed : https://github.com/LagSpikeee/GCIS-123/blob/main/group8-activity3.py.py
 Meera : https://github.com/meeralshara/gcis123/new/main
 Caesar : 
 """
