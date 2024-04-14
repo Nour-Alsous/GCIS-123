@@ -124,7 +124,6 @@ def main():
     print("1. Load Data\n2. Clean and prepare data\n3. Analyze Data\n4. Visualize Data\n")
   
     header, data = load_data()
-    column_to_clean = [row[2] for row in data] 
     cleaned_column = clean_and_prepare_data(column_to_clean)
     sorted_data = analyze_data(data)
     visualize_data(sorted_data)
