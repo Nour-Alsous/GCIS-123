@@ -109,7 +109,7 @@ def visualize_data(data):
     print("Legend: each '*' represents 5 units")
     print()
     col_name = input("Enter the column name you want to represent: ")
-    units_column = [int(float(row[1])) // 5 for row in data if row[0] == col_name.strip()]
+    units_column = min(int(float(data) / 5), 20)
     for units in units_column:
         print('*' * units)
     print("Updated Data:")
