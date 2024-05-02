@@ -1,12 +1,12 @@
 """
 Students: Syed Iftesam, Bacher Al Tajer, Bechir Ben Zaied
 contribution of Syed: 50%
-contribution of Caesar: 25%
-contribution of Meera: 25%
+contribution of Bacher: 25%
+contribution of Bechir: 25%
 Description: 
 
 Repository Links:
-Syed : 
+Syed : https://github.com/LagSpikeee/GCIS-123/blob/main/group8-activity4.py
 Bechir : 
 Bachar : 
 """
@@ -15,6 +15,7 @@ import csv
 
 INVENTORY = {}
 
+""" This function is responsible for reading the .csv file and use the information in it to populate the dictionary INVENTORY"""
 def read_data(file_path):
     
     try:
@@ -29,6 +30,7 @@ def read_data(file_path):
     except FileNotFoundError:
         print("The File could not be found")
 
+""" This class is used for representing the articles in the cart. It contains 3 attributes inside: name, price and quantity"""
 class Article:
     def __init__(self, name, price, quantity):
         self.name = name
@@ -49,12 +51,15 @@ class Article:
 
     def __str__(self):
         return "Article: " + str(self.name) + " Quantity: " + str(self.quantity) + " Price: " + str(self.price)
-
+    
+""" This Class is used for representing the shopping cart and has the attribute list_of_purchased. It includes 4 functions that simulates 
+    the functioning of the cart"""
 class Cart:
     def __init__(self):
         self.list_of_purchased = []
 
-
+    """ This function is responsible to check inside the INVENTORY and see if the product named is available or not, it then checks if the user
+    inputed value exceeds the number of stock available or not, and also updates the cart with the updated products once its added to it."""
     def addProduct(self, name, quantity):
 
         if name in INVENTORY:
@@ -75,7 +80,8 @@ class Cart:
             new_article = Article(name, article.getPrice(), quantity)
             self.list_of_purchased.append(new_article)
     
-
+    """This function works similarly to the last as well, it checks if the input by the user exceeds the actual available amount and 
+    carries forward. After the user inputs which item to remove and how many it then updates the cart with this information"""
     def removeProduct(self, name, quantity):
         for purchased_article in self.list_of_purchased:
             if purchased_article.getName() == name:
@@ -90,7 +96,7 @@ class Cart:
                     INVENTORY[name].setQuantity(INVENTORY[name].getQuantity() + quantity)
                 return
     
-
+    """A simple function that is responsible to output the cart information if it has any items added to it or not"""
     def displayCart(self):
         if not self.list_of_purchased:
             print("There are no item listed in the cart")
@@ -98,7 +104,8 @@ class Cart:
             for article in self.list_of_purchased:
                 print(article)
     
-
+    """This function is responsible for calculating the prices of the product. If the user has added from then 3 items it will apply a 
+    discount fo 10%, and by default the total amount will have a VAT amount applied for 7%"""
     def checkout(self):
 
         total_bill = 0
@@ -106,8 +113,7 @@ class Cart:
         for article in self.list_of_purchased:
             price = article.getPrice()
             quantity = article.getQuantity()
-            
-
+        
             if quantity > 3:
                 price *= 0.10
             
@@ -117,7 +123,7 @@ class Cart:
         
         print("Total bill (applying VAT): $" , total_bill)
 
-
+"""This provoides a visual disply of choices for the users to pick from"""
 def menu():
     print("1. List all items, inventory, and prices")
     print("2. List cart shopping items")
@@ -126,7 +132,7 @@ def menu():
     print("5. Checkout")
     print("6. Exit")
 
-
+"""The main function that initalizes the calling of the functions and is looped"""
 def main():
 
     read_data('products.csv')
