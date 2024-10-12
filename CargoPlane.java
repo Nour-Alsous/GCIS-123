@@ -6,7 +6,7 @@ public class CargoPlane extends Airplane implements Cargo
     private double weight;
 
     public CargoPlane(String make, String flightNumber, int mileage, String flightDuration, String departuretime,
-            String landingtime, int weight) 
+            String landingtime, double weight) 
     {
         super(make, flightNumber, mileage, flightDuration, departuretime, landingtime);
 
